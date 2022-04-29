@@ -1,0 +1,10 @@
+Starting Nmap 7.92 ( https://nmap.org ) at 2022-03-27 06:05 -05
+Nmap scan report for 10.129.218.232
+Host is up (0.34s latency).
+
+PORT   STATE SERVICE VERSION
+21/tcp open  ftp     vsftpd 3.0.3
+Service Info: OS: Unix
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 1.83 seconds

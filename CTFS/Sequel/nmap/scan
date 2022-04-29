@@ -1,0 +1,41 @@
+Starting Nmap 7.92 ( https://nmap.org ) at 2022-03-27 03:35 -05
+Nmap scan report for 10.129.136.254
+Host is up (0.19s latency).
+Not shown: 980 filtered tcp ports (no-response)
+PORT     STATE  SERVICE          VERSION
+22/tcp   closed ssh
+23/tcp   closed telnet
+25/tcp   closed smtp
+110/tcp  closed pop3
+111/tcp  closed rpcbind
+113/tcp  closed ident
+135/tcp  closed msrpc
+139/tcp  closed netbios-ssn
+143/tcp  closed imap
+256/tcp  closed fw1-secureremote
+445/tcp  closed microsoft-ds
+554/tcp  closed rtsp
+587/tcp  closed submission
+993/tcp  closed imaps
+995/tcp  closed pop3s
+1025/tcp closed NFS-or-IIS
+1720/tcp closed h323q931
+1723/tcp closed pptp
+3306/tcp open   tcpwrapped
+|_tls-nextprotoneg: ERROR: Script execution failed (use -d to debug)
+|_ssl-cert: ERROR: Script execution failed (use -d to debug)
+|_tls-alpn: ERROR: Script execution failed (use -d to debug)
+|_ssl-date: ERROR: Script execution failed (use -d to debug)
+| mysql-info: 
+|   Protocol: 10
+|   Version: 5.5.5-10.3.27-MariaDB-0+deb10u1
+|   Thread ID: 38
+|   Capabilities flags: 63486
+|   Some Capabilities: IgnoreSigpipes, Support41Auth, ConnectWithDatabase, Speaks41ProtocolNew, SupportsTransactions, InteractiveClient, SupportsLoadDataLocal, Speaks41ProtocolOld, ODBCClient, IgnoreSpaceBeforeParenthesis, SupportsCompression, LongColumnFlag, DontAllowDatabaseTableColumn, FoundRows, SupportsMultipleStatments, SupportsAuthPlugins, SupportsMultipleResults
+|   Status: Autocommit
+|   Salt: {LIgL'|]=X#Dlt!FyTtm
+|_  Auth Plugin Name: mysql_native_password
+8888/tcp closed sun-answerbook
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 53.63 seconds

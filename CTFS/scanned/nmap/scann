@@ -1,0 +1,14 @@
+Starting Nmap 7.92 ( https://nmap.org ) at 2022-04-28 01:58 -05
+Stats: 0:00:42 elapsed; 0 hosts completed (1 up), 1 undergoing Connect Scan
+Connect Scan Timing: About 32.49% done; ETC: 02:01 (0:01:25 remaining)
+Stats: 0:01:15 elapsed; 0 hosts completed (1 up), 1 undergoing Connect Scan
+Connect Scan Timing: About 58.15% done; ETC: 02:01 (0:00:54 remaining)
+Warning: 10.10.11.141 giving up on port because retransmission cap hit (10).
+Nmap scan report for 10.10.11.141
+Host is up (0.097s latency).
+Not shown: 45098 closed tcp ports (conn-refused), 20435 filtered tcp ports (no-response)
+PORT   STATE SERVICE
+22/tcp open  ssh
+80/tcp open  http
+
+Nmap done: 1 IP address (1 host up) scanned in 116.85 seconds

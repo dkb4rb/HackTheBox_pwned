@@ -1,0 +1,13 @@
+se inicia con un scaneo de puertos, donde encontramos varios
+servicios corriendo en la maquina.
+
+```
+	nmap -sC -sV -p- --min-rate=5000 timelapse.htb -Pn
+
+
+
+
+
+```
+
+

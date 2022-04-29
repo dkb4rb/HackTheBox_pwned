@@ -1,0 +1,70 @@
+Starting Nmap 7.92 ( https://nmap.org ) at 2022-04-10 16:06 PDT
+NSE: Loaded 155 scripts for scanning.
+NSE: Script Pre-scanning.
+NSE: Starting runlevel 1 (of 3) scan.
+Initiating NSE at 16:06
+Completed NSE at 16:06, 0.00s elapsed
+NSE: Starting runlevel 2 (of 3) scan.
+Initiating NSE at 16:06
+Completed NSE at 16:06, 0.00s elapsed
+NSE: Starting runlevel 3 (of 3) scan.
+Initiating NSE at 16:06
+Completed NSE at 16:06, 0.00s elapsed
+Initiating SYN Stealth Scan at 16:06
+Scanning store.djewelry.htb (10.10.11.146) [1000 ports]
+Discovered open port 22/tcp on 10.10.11.146
+Discovered open port 80/tcp on 10.10.11.146
+Increasing send delay for 10.10.11.146 from 0 to 5 due to 327 out of 1088 dropped probes since last increase.
+Increasing send delay for 10.10.11.146 from 5 to 10 due to 210 out of 698 dropped probes since last increase.
+Increasing send delay for 10.10.11.146 from 10 to 20 due to max_successful_tryno increase to 4
+Increasing send delay for 10.10.11.146 from 20 to 40 due to max_successful_tryno increase to 5
+Increasing send delay for 10.10.11.146 from 40 to 80 due to max_successful_tryno increase to 6
+Completed SYN Stealth Scan at 16:06, 1.20s elapsed (1000 total ports)
+Initiating Service scan at 16:06
+Scanning 2 services on store.djewelry.htb (10.10.11.146)
+Stats: 0:00:07 elapsed; 0 hosts completed (1 up), 1 undergoing Service Scan
+Service scan Timing: About 50.00% done; ETC: 16:06 (0:00:06 remaining)
+Completed Service scan at 16:06, 6.33s elapsed (2 services on 1 host)
+NSE: Script scanning 10.10.11.146.
+NSE: Starting runlevel 1 (of 3) scan.
+Initiating NSE at 16:06
+Completed NSE at 16:06, 7.43s elapsed
+NSE: Starting runlevel 2 (of 3) scan.
+Initiating NSE at 16:06
+Completed NSE at 16:06, 1.02s elapsed
+NSE: Starting runlevel 3 (of 3) scan.
+Initiating NSE at 16:06
+Completed NSE at 16:06, 0.00s elapsed
+Nmap scan report for store.djewelry.htb (10.10.11.146)
+Host is up, received user-set (0.26s latency).
+Scanned at 2022-04-10 16:06:13 PDT for 16s
+Not shown: 998 closed tcp ports (reset)
+PORT   STATE SERVICE REASON         VERSION
+22/tcp open  ssh     syn-ack ttl 63 OpenSSH 8.2 (protocol 2.0)
+| ssh-hostkey: 
+|   3072 be:66:06:dd:20:77:ef:98:7f:6e:73:4a:98:a5:d8:f0 (RSA)
+| ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDeVJjvJKCD1dlTm7jo6sY5A6q2oWFakWfH/y6lkWB5eIeVxzQTT/XXyA2RW/Zegb7vbpculYjr6cPtbouTLqPkyi2Xzyk3Jz2jQHKi6qTcHIQL75tITJKPCag4tAAIvKpSCwT13B38TKd0KV2R8T59raCu83095p/GaLrdhwGUbuD0p+/GnN1jIsLs04V26rbPKLmMJLj7Dj/+yCo/CF88/4EQaFFC920sjln4FZ7FlVhv4mIwIb10nIsEgvsKBIGvvu4ZKKKU+Al6p8bYI50srY/plKu0RxZpKE6QGV17IC38q8CDsLWkmFr5emeIxHfvgUlYaAOruACcnru6azsJw69s2Kq/dKaz8K6PjRb9Ybf6/Ix8xGhfJ/gH6x0PhlxIKXD1M93XILJmgKRPJpzqrA6NZ+mtQwx0JFsgHHJno/TSrx00E6GPEtUPHcxOVZE0m0Y9rfd5Q8W6/eJN/Q3nMIywfHKZE1RUQOziGtud/jAOOApvrRHRO6l0riwQCK8=
+|   256 1f:a2:09:72:70:68:f4:58:ed:1f:6c:49:7d:e2:13:39 (ECDSA)
+| ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBBQjfhdRHFh+eC/2RtmQwDSGmf0psHnd2uqXFyN0zdiyxvF3WCQYaxOgerNZqC0RyQjm2hW0DN6/0oim3slS8dw=
+|   256 70:15:39:94:c2:cd:64:cb:b2:3b:d1:3e:f6:09:44:e8 (ED25519)
+|_ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFdnC6v7My/dt23PaoX7MGbuZ8/8KZh1O+xt4dDFvFQK
+80/tcp open  http    syn-ack ttl 63 Apache httpd 2.4.41 ((Ubuntu))
+|_http-title: Diana\xE2\x80\x99s jewelry
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+|_http-server-header: Apache/2.4.41 (Ubuntu)
+
+NSE: Script Post-scanning.
+NSE: Starting runlevel 1 (of 3) scan.
+Initiating NSE at 16:06
+Completed NSE at 16:06, 0.00s elapsed
+NSE: Starting runlevel 2 (of 3) scan.
+Initiating NSE at 16:06
+Completed NSE at 16:06, 0.00s elapsed
+NSE: Starting runlevel 3 (of 3) scan.
+Initiating NSE at 16:06
+Completed NSE at 16:06, 0.00s elapsed
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 16.41 seconds
+           Raw packets sent: 2102 (92.488KB) | Rcvd: 2103 (84.140KB)

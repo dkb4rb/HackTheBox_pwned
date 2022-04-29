@@ -1,0 +1,7 @@
+EL usuario que podra loguearse a rocket leage es janit
+
+url: talkative.htb:3000/home
+
+la vulnerabilidad se encuentra al registrar un nuevo usuario ya que este nos 
+asignara el token id del user saul
+

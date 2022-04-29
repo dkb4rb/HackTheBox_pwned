@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html class="ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<title>Diana’s jewelry</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+	<link rel="stylesheet" media="all" href="css/style.css">
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+<body>
+
+	<header id="header">
+		<div class="container">
+			<a href="index.php" id="logo" title="Diana's Jewelery">Diana's Jewelery</a>
+			<div class="right-links">
+				<ul>
+					<li><a href="cart.php"><span class="ico-products"></span>Empty</a></li>
+					<li><a href="login.php"><span class="ico-account"></span>Account</a></li>
+					<li><a href="login.php"><span class="ico-signout"></span>Login</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- / container -->
+	</header>
+	<!-- / header -->
+
+	<nav id="menu">
+		<div class="container">
+			<div class="trigger"></div>
+			<ul>
+				<li><a href="index.php#latest">New collection</a></li>
+				<li><a href="products.php">necklaces</a></li>
+				<li><a href="products.php">earrings</a></li>
+				<li><a href="products.php">Rings</a></li>
+				<li><a href="products.php">Gift cards</a></li>
+				<li><a href="products.php">Promotions</a></li>
+			</ul>
+		</div>
+		<!-- / container -->
+	</nav>
+	<!-- / navigation -->
+
+	<div id="breadcrumbs">
+		<div class="container">
+			<ul>
+				<li><a href="index.php">Home</a></li>
+				<li>404</li>
+			</ul>
+		</div>
+		<!-- / container -->
+	</div>
+	<!-- / body -->
+
+	<div id="body">
+		<div class="container">
+			<div id="content" class="full">
+				<div class="total-count">
+					<h4>404</h4>
+					<h4>Page Not Found</h4>
+				</div>
+		
+			</div>
+			<!-- / content -->
+		</div>
+		<!-- / container -->
+	</div>
+	<!-- / body -->
+
+	<footer id="footer">
+		<div class="container">
+			<div class="cols">
+				<div class="col">
+					<h3>Frequently Asked Questions</h3>
+					<ul>
+                                                <li><a href="#">What are your opening times? </a></li>
+                                                <li><a href="#">Do you accept telephone orders?</a></li>
+                                                <li><a href="#">Do you include shipping in your price?</a></li>
+                                                <li><a href="#">Is all jewellery sold at your store authentic?</a></li>
+                                                <li><a href="#">Do you do payment plans?</a></li>
+					</ul>
+				</div>
+				<div class="col media">
+					<h3>Social media</h3>
+					<ul class="social">
+						<li><a href="#"><span class="ico ico-fb"></span>Facebook</a></li>
+						<li><a href="#"><span class="ico ico-tw"></span>Twitter</a></li>
+						<li><a href="#"><span class="ico ico-gp"></span>Google+</a></li>
+						<li><a href="#"><span class="ico ico-pi"></span>Pinterest</a></li>
+					</ul>
+				</div>
+				<div class="col contact">
+					<h3>Contact us</h3>
+					<p>Diana’s Jewelry INC.<br>54233 Avenue Street<br>New York</p>
+					<p><span class="ico ico-em"></span><a href="#">contact@djewelry.htb</a></p>
+					<p><span class="ico ico-ph"></span>(590) 423 446 924</p>
+				</div>
+				<div class="col newsletter">
+					<h3>Join our newsletter</h3>
+					<p>Stay up to date with the latest products and jewelery news via email..</p>
+					<form action="#">
+						<input type="text" placeholder="Your email address...">
+						<button type="submit"></button>
+					</form>
+				</div>
+			</div>
+			<p class="copy">Copyright 2021 Diana's Jewelry. All rights reserved.</p>
+		</div>
+		<!-- / container -->
+	</footer>
+	<!-- / footer -->
+
+
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script>window.jQuery || document.write("<script src='js/jquery-1.11.1.min.js'>\x3C/script>")</script>
+	<script src="js/plugins.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>

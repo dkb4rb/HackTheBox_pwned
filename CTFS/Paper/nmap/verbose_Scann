@@ -1,0 +1,81 @@
+Starting Nmap 7.92 ( https://nmap.org ) at 2022-04-21 21:01 PDT
+Initiating Parallel DNS resolution of 1 host. at 21:01
+Completed Parallel DNS resolution of 1 host. at 21:01, 0.08s elapsed
+DNS resolution of 1 IPs took 0.08s. Mode: Async [#: 2, OK: 0, NX: 1, DR: 0, SF: 0, TR: 1, CN: 0]
+Initiating Connect Scan at 21:01
+Scanning 10.10.11.143 [1000 ports]
+Discovered open port 80/tcp on 10.10.11.143
+Discovered open port 22/tcp on 10.10.11.143
+Discovered open port 443/tcp on 10.10.11.143
+Completed Connect Scan at 21:01, 0.61s elapsed (1000 total ports)
+Nmap scan report for 10.10.11.143
+Host is up, received user-set (0.13s latency).
+Scanned at 2022-04-21 21:01:50 PDT for 1s
+Not shown: 937 filtered tcp ports (no-response)
+PORT      STATE  SERVICE          REASON
+17/tcp    closed qotd             conn-refused
+21/tcp    closed ftp              conn-refused
+22/tcp    open   ssh              syn-ack
+23/tcp    closed telnet           conn-refused
+25/tcp    closed smtp             conn-refused
+53/tcp    closed domain           conn-refused
+80/tcp    open   http             syn-ack
+106/tcp   closed pop3pw           conn-refused
+110/tcp   closed pop3             conn-refused
+111/tcp   closed rpcbind          conn-refused
+113/tcp   closed ident            conn-refused
+135/tcp   closed msrpc            conn-refused
+139/tcp   closed netbios-ssn      conn-refused
+143/tcp   closed imap             conn-refused
+144/tcp   closed news             conn-refused
+199/tcp   closed smux             conn-refused
+256/tcp   closed fw1-secureremote conn-refused
+443/tcp   open   https            syn-ack
+445/tcp   closed microsoft-ds     conn-refused
+554/tcp   closed rtsp             conn-refused
+587/tcp   closed submission       conn-refused
+711/tcp   closed cisco-tdp        conn-refused
+993/tcp   closed imaps            conn-refused
+995/tcp   closed pop3s            conn-refused
+1025/tcp  closed NFS-or-IIS       conn-refused
+1045/tcp  closed fpitp            conn-refused
+1082/tcp  closed amt-esd-prot     conn-refused
+1084/tcp  closed ansoft-lm-2      conn-refused
+1087/tcp  closed cplscrambler-in  conn-refused
+1122/tcp  closed availant-mgr     conn-refused
+1149/tcp  closed bvtsonar         conn-refused
+1174/tcp  closed fnet-remote-ui   conn-refused
+1500/tcp  closed vlsi-lm          conn-refused
+1720/tcp  closed h323q931         conn-refused
+1723/tcp  closed pptp             conn-refused
+2013/tcp  closed raid-am          conn-refused
+2401/tcp  closed cvspserver       conn-refused
+2869/tcp  closed icslap           conn-refused
+3306/tcp  closed mysql            conn-refused
+3369/tcp  closed satvid-datalnk   conn-refused
+3389/tcp  closed ms-wbt-server    conn-refused
+3517/tcp  closed 802-11-iapp      conn-refused
+3828/tcp  closed neteh            conn-refused
+4000/tcp  closed remoteanything   conn-refused
+5900/tcp  closed vnc              conn-refused
+5925/tcp  closed unknown          conn-refused
+5989/tcp  closed wbem-https       conn-refused
+6123/tcp  closed backup-express   conn-refused
+8010/tcp  closed xmpp             conn-refused
+8080/tcp  closed http-proxy       conn-refused
+8100/tcp  closed xprint-server    conn-refused
+8400/tcp  closed cvd              conn-refused
+8649/tcp  closed unknown          conn-refused
+8652/tcp  closed unknown          conn-refused
+8888/tcp  closed sun-answerbook   conn-refused
+9040/tcp  closed tor-trans        conn-refused
+9503/tcp  closed unknown          conn-refused
+10003/tcp closed documentum_s     conn-refused
+13783/tcp closed netbackup        conn-refused
+15004/tcp closed unknown          conn-refused
+15660/tcp closed bex-xr           conn-refused
+16992/tcp closed amt-soap-http    conn-refused
+18040/tcp closed unknown          conn-refused
+
+Read data files from: /usr/bin/../share/nmap
+Nmap done: 1 IP address (1 host up) scanned in 0.78 seconds

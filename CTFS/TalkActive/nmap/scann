@@ -1,0 +1,151 @@
+Starting Nmap 7.92 ( https://nmap.org ) at 2022-04-22 01:41 PDT
+NSE: Loaded 155 scripts for scanning.
+NSE: Script Pre-scanning.
+Initiating NSE at 01:41
+Completed NSE at 01:41, 0.00s elapsed
+Initiating NSE at 01:41
+Completed NSE at 01:41, 0.00s elapsed
+Initiating NSE at 01:41
+Completed NSE at 01:41, 0.00s elapsed
+Initiating SYN Stealth Scan at 01:41
+Scanning talkative.htb (10.10.11.155) [1000 ports]
+Discovered open port 8082/tcp on 10.10.11.155
+Discovered open port 8080/tcp on 10.10.11.155
+Discovered open port 80/tcp on 10.10.11.155
+Discovered open port 3000/tcp on 10.10.11.155
+Discovered open port 8081/tcp on 10.10.11.155
+Completed SYN Stealth Scan at 01:41, 0.54s elapsed (1000 total ports)
+Initiating Service scan at 01:41
+Scanning 5 services on talkative.htb (10.10.11.155)
+Completed Service scan at 01:42, 29.48s elapsed (5 services on 1 host)
+NSE: Script scanning 10.10.11.155.
+Initiating NSE at 01:42
+Completed NSE at 01:42, 8.40s elapsed
+Initiating NSE at 01:42
+Completed NSE at 01:42, 2.64s elapsed
+Initiating NSE at 01:42
+Completed NSE at 01:42, 0.00s elapsed
+Nmap scan report for talkative.htb (10.10.11.155)
+Host is up (0.10s latency).
+Not shown: 994 closed tcp ports (reset)
+PORT     STATE    SERVICE VERSION
+22/tcp   filtered ssh
+80/tcp   open     http    Apache httpd 2.4.52
+|_http-generator: Bolt
+|_http-title: Talkative.htb | Talkative
+| http-methods: 
+|_  Supported Methods: GET POST HEAD
+|_http-server-header: Apache/2.4.52 (Debian)
+3000/tcp open     ppp?
+| fingerprint-strings: 
+|   GetRequest: 
+|     HTTP/1.1 200 OK
+|     X-XSS-Protection: 1
+|     X-Instance-ID: AX44orekJkm8KNJJm
+|     Content-Type: text/html; charset=utf-8
+|     Vary: Accept-Encoding
+|     Date: Fri, 22 Apr 2022 08:42:10 GMT
+|     Connection: close
+|     <!DOCTYPE html>
+|     <html>
+|     <head>
+|     <link rel="stylesheet" type="text/css" class="__meteor-css__" href="/3ab95015403368c507c78b4228d38a494ef33a08.css?meteor_css_resource=true">
+|     <meta charset="utf-8" />
+|     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+|     <meta http-equiv="expires" content="-1" />
+|     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+|     <meta name="fragment" content="!" />
+|     <meta name="distribution" content="global" />
+|     <meta name="rating" content="general" />
+|     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+|     <meta name="mobile-web-app-capable" content="yes" />
+|     <meta name="apple-mobile-web-app-capable" conten
+|   HTTPOptions: 
+|     HTTP/1.1 200 OK
+|     X-XSS-Protection: 1
+|     X-Instance-ID: AX44orekJkm8KNJJm
+|     Content-Type: text/html; charset=utf-8
+|     Vary: Accept-Encoding
+|     Date: Fri, 22 Apr 2022 08:42:13 GMT
+|     Connection: close
+|     <!DOCTYPE html>
+|     <html>
+|     <head>
+|     <link rel="stylesheet" type="text/css" class="__meteor-css__" href="/3ab95015403368c507c78b4228d38a494ef33a08.css?meteor_css_resource=true">
+|     <meta charset="utf-8" />
+|     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+|     <meta http-equiv="expires" content="-1" />
+|     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+|     <meta name="fragment" content="!" />
+|     <meta name="distribution" content="global" />
+|     <meta name="rating" content="general" />
+|     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+|     <meta name="mobile-web-app-capable" content="yes" />
+|     <meta name="apple-mobile-web-app-capable" conten
+|   Help, NCP: 
+|_    HTTP/1.1 400 Bad Request
+8080/tcp open     http    Tornado httpd 5.0
+|_http-title: jamovi
+| http-methods: 
+|_  Supported Methods: GET HEAD
+|_http-server-header: TornadoServer/5.0
+8081/tcp open     http    Tornado httpd 5.0
+|_http-title: 404: Not Found
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+|_http-server-header: TornadoServer/5.0
+8082/tcp open     http    Tornado httpd 5.0
+|_http-server-header: TornadoServer/5.0
+|_http-title: 404: Not Found
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port3000-TCP:V=7.92%I=7%D=4/22%Time=62626A62%P=x86_64-pc-linux-gnu%r(Ge
+SF:tRequest,2F37,"HTTP/1\.1\x20200\x20OK\r\nX-XSS-Protection:\x201\r\nX-In
+SF:stance-ID:\x20AX44orekJkm8KNJJm\r\nContent-Type:\x20text/html;\x20chars
+SF:et=utf-8\r\nVary:\x20Accept-Encoding\r\nDate:\x20Fri,\x2022\x20Apr\x202
+SF:022\x2008:42:10\x20GMT\r\nConnection:\x20close\r\n\r\n<!DOCTYPE\x20html
+SF:>\n<html>\n<head>\n\x20\x20<link\x20rel=\"stylesheet\"\x20type=\"text/c
+SF:ss\"\x20class=\"__meteor-css__\"\x20href=\"/3ab95015403368c507c78b4228d
+SF:38a494ef33a08\.css\?meteor_css_resource=true\">\n<meta\x20charset=\"utf
+SF:-8\"\x20/>\n\t<meta\x20http-equiv=\"content-type\"\x20content=\"text/ht
+SF:ml;\x20charset=utf-8\"\x20/>\n\t<meta\x20http-equiv=\"expires\"\x20cont
+SF:ent=\"-1\"\x20/>\n\t<meta\x20http-equiv=\"X-UA-Compatible\"\x20content=
+SF:\"IE=edge\"\x20/>\n\t<meta\x20name=\"fragment\"\x20content=\"!\"\x20/>\
+SF:n\t<meta\x20name=\"distribution\"\x20content=\"global\"\x20/>\n\t<meta\
+SF:x20name=\"rating\"\x20content=\"general\"\x20/>\n\t<meta\x20name=\"view
+SF:port\"\x20content=\"width=device-width,\x20initial-scale=1,\x20maximum-
+SF:scale=1,\x20user-scalable=no\"\x20/>\n\t<meta\x20name=\"mobile-web-app-
+SF:capable\"\x20content=\"yes\"\x20/>\n\t<meta\x20name=\"apple-mobile-web-
+SF:app-capable\"\x20conten")%r(Help,1C,"HTTP/1\.1\x20400\x20Bad\x20Request
+SF:\r\n\r\n")%r(NCP,1C,"HTTP/1\.1\x20400\x20Bad\x20Request\r\n\r\n")%r(HTT
+SF:POptions,2F37,"HTTP/1\.1\x20200\x20OK\r\nX-XSS-Protection:\x201\r\nX-In
+SF:stance-ID:\x20AX44orekJkm8KNJJm\r\nContent-Type:\x20text/html;\x20chars
+SF:et=utf-8\r\nVary:\x20Accept-Encoding\r\nDate:\x20Fri,\x2022\x20Apr\x202
+SF:022\x2008:42:13\x20GMT\r\nConnection:\x20close\r\n\r\n<!DOCTYPE\x20html
+SF:>\n<html>\n<head>\n\x20\x20<link\x20rel=\"stylesheet\"\x20type=\"text/c
+SF:ss\"\x20class=\"__meteor-css__\"\x20href=\"/3ab95015403368c507c78b4228d
+SF:38a494ef33a08\.css\?meteor_css_resource=true\">\n<meta\x20charset=\"utf
+SF:-8\"\x20/>\n\t<meta\x20http-equiv=\"content-type\"\x20content=\"text/ht
+SF:ml;\x20charset=utf-8\"\x20/>\n\t<meta\x20http-equiv=\"expires\"\x20cont
+SF:ent=\"-1\"\x20/>\n\t<meta\x20http-equiv=\"X-UA-Compatible\"\x20content=
+SF:\"IE=edge\"\x20/>\n\t<meta\x20name=\"fragment\"\x20content=\"!\"\x20/>\
+SF:n\t<meta\x20name=\"distribution\"\x20content=\"global\"\x20/>\n\t<meta\
+SF:x20name=\"rating\"\x20content=\"general\"\x20/>\n\t<meta\x20name=\"view
+SF:port\"\x20content=\"width=device-width,\x20initial-scale=1,\x20maximum-
+SF:scale=1,\x20user-scalable=no\"\x20/>\n\t<meta\x20name=\"mobile-web-app-
+SF:capable\"\x20content=\"yes\"\x20/>\n\t<meta\x20name=\"apple-mobile-web-
+SF:app-capable\"\x20conten");
+Service Info: Host: 172.17.0.12
+
+NSE: Script Post-scanning.
+Initiating NSE at 01:42
+Completed NSE at 01:42, 0.00s elapsed
+Initiating NSE at 01:42
+Completed NSE at 01:42, 0.00s elapsed
+Initiating NSE at 01:42
+Completed NSE at 01:42, 0.00s elapsed
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 41.48 seconds
+           Raw packets sent: 1322 (58.168KB) | Rcvd: 1329 (71.489KB)

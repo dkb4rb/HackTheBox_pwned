@@ -1,0 +1,4 @@
+--2022-04-10 05:15:09--  ftp://blob/https://app.hackthebox.com/43f57402-9df2-4a46-a255-79b51bcb7f43
+           => ‘43f57402-9df2-4a46-a255-79b51bcb7f43’
+Resolving blob (blob)... failed: Name or service not known.
+wget: unable to resolve host address ‘blob’

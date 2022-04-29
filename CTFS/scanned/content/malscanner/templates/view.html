@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sample {{ md5 }}</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<h1>System Call log for sample {{ md5 }}</h1>
+<div id="high-dropdown">
+<p>
+    <a class="btn btn-danger" data-toggle="collapse" href="#high" role="button" aria-expanded="false" aria-controls="high">
+        Show High Priority Syscalls ({{ high|length }})
+    </a>
+</p>
+<div class="collapse" id="high">
+    {% for syscall in high %}{{ syscall.1|safe }}{% endfor %}
+</div>
+</div>
+
+<div id="med-dropdown">
+<p>
+    <a class="btn btn-warning" data-toggle="collapse" href="#med" role="button" aria-expanded="false" aria-controls="med">
+        Show Medium Priority Syscalls ({{ med|length }})
+    </a>
+</p>
+<div class="collapse" id="med">
+    {% for syscall in med %}{{ syscall.1|safe }}{% endfor %}
+</div>
+</div>
+
+<div id="low-dropdown">
+<p>
+    <a class="btn btn-success" data-toggle="collapse" href="#low" role="button" aria-expanded="false" aria-controls="low">
+        Show Low Priority Syscalls ({{ low|length }})
+    </a>
+</p>
+<div class="collapse" id="low">
+    {% for syscall in low %}{{ syscall.1|safe }}{% endfor %}
+</div>
+</div>
+
+<div id="ignored-dropdown">
+<p>
+    <a class="btn btn-light" data-toggle="collapse" href="#ignore" role="button" aria-expanded="false" aria-controls="ignore">
+        Show Ignored Syscalls ({{ ignore|length }})
+    </a>
+</p>
+<div class="collapse" id="ignore">
+    {% for syscall in ignore %}{{ syscall.1|safe }}{% endfor %}
+</div>
+</div>
+</body>
+</html>

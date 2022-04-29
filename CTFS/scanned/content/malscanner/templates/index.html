@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Malware Scanner</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div style="margin: auto; width: 70%; text-align: center">
+<div style="margin-top: 50px">
+<h2 style="font-family: 'Roboto',sans-serif;">MalScanner</h2>
+    <p>A brand new, totally FOSS, malware analysis sandbox!</p>
+</div>
+<div style="margin-top: 75px; text-align: left">
+    <ul>
+        <li><b>How does it work?</b><br/>
+            Simply upload an untrusted executable <a href="/scanner/upload">here</a>, and we'll run it in a safe environment</li>
+        <li><b>What do the results look like?</b><br/>
+            You'll be able to view a list of syscalls and arguments made by the executable, sorted by their potential danger.
+        </li>
+        <li><b>How can this be so safe?</b><br/>
+            Simple! We use the most advanced security features offered by Debian 10, such as chroot, user namespaces, and ptrace!</li>
+        <li><b>Can I see a list of my uploaded samples?</b><br/>
+            Unfortunately not yet, but our developers are hard at work with the database functionality in order to allow regular users to create accounts.</li>
+        <li><b>Where can I download the source code?!?</b><br/>
+            Right <a href="/static/source.tar.gz">here</a>!</li>
+    </ul>
+</div>
+</div>
+</body>
+</html>

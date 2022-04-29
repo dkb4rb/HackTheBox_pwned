@@ -1,0 +1,32 @@
+Starting Nmap 7.92 ( https://nmap.org ) at 2022-03-27 06:03 -05
+Nmap scan report for 10.129.218.232
+Host is up (0.22s latency).
+Not shown: 978 filtered tcp ports (no-response)
+PORT      STATE  SERVICE          VERSION
+21/tcp    open   tcpwrapped
+23/tcp    closed telnet
+25/tcp    closed smtp
+80/tcp    open   tcpwrapped
+|_http-server-header: Apache/2.4.41 (Ubuntu)
+|_http-title: Smash - Bootstrap Business Template
+110/tcp   closed pop3
+113/tcp   closed ident
+135/tcp   closed msrpc
+139/tcp   closed netbios-ssn
+199/tcp   closed smux
+256/tcp   closed fw1-secureremote
+443/tcp   closed https
+554/tcp   closed rtsp
+587/tcp   closed submission
+993/tcp   closed imaps
+995/tcp   closed pop3s
+1025/tcp  closed NFS-or-IIS
+1723/tcp  closed pptp
+3306/tcp  closed mysql
+3389/tcp  closed ms-wbt-server
+5900/tcp  closed vnc
+8888/tcp  closed sun-answerbook
+15004/tcp closed unknown
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 26.92 seconds
