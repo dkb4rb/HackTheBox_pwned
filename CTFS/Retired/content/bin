@@ -1,0 +1,10 @@
+--2022-05-04 01:45:39--  http://10.10.11.154/activate_license.php
+Connecting to 10.10.11.154:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘activate_license.php’
+
+     0K                                                        0,00 =0s
+
+2022-05-04 01:45:40 (0,00 B/s) - ‘activate_license.php’ saved [0]
+
