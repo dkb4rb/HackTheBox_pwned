@@ -1,0 +1,20 @@
+	 1) the binary don´t execute if you did not root user
+        
+         2) The size of the buff to overflow is 518
+
+	 3) To exec the exploit to obatin one revershell
+	
+	4) Remenber with use python3 to debug and exec the script step for step
+	
+## WRITE-UP RETIRED
+
+Firts init with the recon stage.
+
+
+
+
+### BUFFER OVERFLOW
+
+
+
+
